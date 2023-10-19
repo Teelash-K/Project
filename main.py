@@ -33,7 +33,7 @@ def authenticate_user(username, password):
 
 
 def login_signup():
-        st.markdown("<h1 style = 'top-margin: 0rem;text-align: center; color: #252B48;'>Welcome to The Shield 🛡</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style = 'top-margin: 0rem;text-align: center; color: #7C73C0;'>Welcome to The Shield 🛡</h1>", unsafe_allow_html=True)
         # st.markdown('Welcome to :purple[The Shield] 🛡')
         # st.title("Loging or Sign Up")
         login_signup_page = st.selectbox("Select an option to log in or sign up", ["Login", "Signup"])
