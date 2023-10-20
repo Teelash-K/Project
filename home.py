@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 
 def app():
-    st.title("The Shield 🛡")  # This title should be inside the app function
+    st.markdown("<h4 style='font-weight: bold; font-style: italic; font-family: Optima; color: #8BE8E5'>The Shield 🛡</h4>", unsafe_allow_html=True)  # This title should be inside the app function
 
     # Load the model and perform other data processing
 
@@ -39,7 +39,7 @@ def app():
     st.markdown(custom_css, unsafe_allow_html=True)
 
     with st.form('my_form', clear_on_submit=True):
-        st.header("FRAUD DETECTION")
+        st.subheader("Fraud Detection")
         # with st.expander("Variable Definitions"):
         #     st.table(df)
         Type_of_Transaction = st.selectbox('Type of Transaction', ['', 'CASH_OUT', 'PAYMENT', 'CASH_IN', 'TRANSFER', 'DEBIT'])

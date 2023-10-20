@@ -21,8 +21,8 @@ def app():
                 )
     add_bg_from_local('the2.jpeg') 
 
-    st.title("About The Shield")
-    st.write("<h6 style='font-weight: bold; font-style: italic; font-family: Optima; color: #8BE8E5'>Built by TAIWO K. LASH</h6>", unsafe_allow_html=True)
+    st.markdown("<h4 style='font-weight: bold; text-align: center; color: #1F4172'>The Shield: Your Guardian Against Online Transaction Fraud</h3>", unsafe_allow_html=True)
+    st.write("<p style='font-weight: bold; font-style: italic; font-family: Optima; color: #8BE8E5; font-size: 12px;'>Built by TAIWO K. LASH</p>", unsafe_allow_html=True)
     st.markdown("<br><br>", unsafe_allow_html=True)
 
     # st.markdown("<h4 style='font-weight: bold; colour: #E55604'>Overview</h4>", unsafe_allow_html=True)
@@ -30,7 +30,7 @@ def app():
 
 
 # Add an overview
-    st.markdown("<h3 style='font-weight: bold; color: black;'>Overview</h3>", unsafe_allow_html=True)
+    # st.markdown("<h5 style='font-weight: bold; color: #1F4172;'>The Shield: Your Guardian Against Online Transaction Fraud</h3>", unsafe_allow_html=True)
     st.markdown(
         """
         <p style='text-align: justify; color: black; background-color: white; padding: 10px;'>

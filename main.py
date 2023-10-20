@@ -1,7 +1,7 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
 import pickle
 import pandas as pd
-from streamlit_option_menu import option_menu
 import  home, features, about, logout
 import sqlite3
 
@@ -31,7 +31,6 @@ def authenticate_user(username, password):
         return True
     return False
 
-
 def login_signup():
         st.markdown("<h1 style = 'top-margin: 0rem;text-align: center; color: #7C73C0;'>Welcome to The Shield 🛡</h1>", unsafe_allow_html=True)
         # st.markdown('Welcome to :purple[The Shield] 🛡')
@@ -39,20 +38,21 @@ def login_signup():
         login_signup_page = st.selectbox("Select an option to log in or sign up", ["Login", "Signup"])
 
         if login_signup_page == "Login":
-            login_username = st.text_input("Username (login)")
-            login_password = st.text_input("Password (login)", type = "password")
+            login_username = st.text_input("Username", placeholder='Enter Your Username')
+            login_password = st.text_input("Password",placeholder='Enter Your Password', type = "password")
 
-        if st.button("Login"):
-            if authenticate_user(login_username, login_password):
-                st.session_state.user = login_username
-                st.success("Login successful.")
+            if st.button("Login"):
+                    
+                if authenticate_user(login_username, login_password):
+                    st.session_state.user = login_username
+                    st.success("Login successful.")
             
-            else:
-                st.error("Login failed. Enter a valid username or password.")
+                else:
+                    st.error("Login failed. Enter a valid username or password.")
         
         elif login_signup_page =="Signup":
-            signup_username = st.text_input("Username (signup)")
-            signup_password = st.text_input("Password", type = "password")
+            signup_username = st.text_input("Username", placeholder= 'Enter Your Username')
+            signup_password = st.text_input("Password", placeholder= 'Enter Your Password', type = "password")
 
             if st.button("Sign Up"):
                 c.execute("INSERT INTO users VALUES (?, ?)", (signup_username, signup_password))
@@ -89,7 +89,7 @@ class MultiApp:
                 options = ['Home', 'Features', 'About', 'Logout'],
                 icons = ['house-fill', '', 'person-circle', 'info', 'Logout'],
                 menu_icon = 'shield-fill',
-                default_index = 1,
+                default_index = 0,
                 styles = {
                     "container": {"padding": "5!important", "background-color":'#9F91CC'},
                     "icon":{"color": "white", "font-size": "23px"},
